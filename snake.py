@@ -56,3 +56,10 @@ class Snake(Turtle):
         self.color("white")
         self.hideturtle()
         self.write("GAME OVER", align="center", font=("Arial", 24, "normal"))
+
+    def reset(self):
+        for seg in self.segments:
+            seg.hideturtle()
+        self.segments.clear()
+        self.create_snake()
+        self.head = self.segments[0]
